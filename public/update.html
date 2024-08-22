@@ -30,7 +30,7 @@
         async function searchUser() {
             const name = document.getElementById('name').value;
             try {
-                const response = await fetch(`http://localhost:3000/api/user/${name}`);
+                const response = await fetch(`/api/user/${name}`);
                 const result = await response.json();
 
                 if (result.code === 200) {
@@ -101,7 +101,7 @@
             const userData = Object.fromEntries(formData);
 
             try {
-                const response = await fetch(`http://localhost:3000/api/user/${userData.id}`, {
+                const response = await fetch(`/api/user/${userData.id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -121,7 +121,7 @@
             }
 
             try {
-                const response = await fetch(`http://localhost:3000/api/user/${name}`, {
+                const response = await fetch(`/api/user/${name}`, {
                     method: 'DELETE'
                 });
                 const result = await response.json();
